@@ -34,7 +34,7 @@ def count_increase_triples(data : List[int]) -> int:
         
  # MAIN       
 def main():
-    data = read_data("data1.txt")
+    data = read_data("Data\\data1.txt")
     print(f"Puzzle 1: {count_increase(data)}")
     print(f"Puzzle 2: {count_increase_triples(data)}")
 
