@@ -1,12 +1,9 @@
 from typing import List
 
+# Get Data Input
 def read_data(filename : str) -> List[int]:
-    data = []
     with open(filename) as f:
-        lines = f.readlines()
-        for line in lines:
-            data.append(int(line))
-    return data
+        return [int(x) for x in f]
 
 
 # Puzzle 1
@@ -15,7 +12,7 @@ def count_increase(data : List[int]) -> int:
     
     cnt, prev = 0, data[0]
     
-    for ele in data:
+    for idx, ele in enumerate(data):
         cnt = cnt + 1 if ele > prev else cnt
         prev = ele
     
@@ -35,17 +32,11 @@ def count_increase_triples(data : List[int]) -> int:
         
     return cnt
         
-        
-        
-    
-
+ # MAIN       
 def main():
     data = read_data("data1.txt")
     print(f"Puzzle 1: {count_increase(data)}")
     print(f"Puzzle 2: {count_increase_triples(data)}")
-    
-    
-    
-    
+
 if __name__ == "__main__":
     main()
