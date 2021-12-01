@@ -10,11 +10,9 @@ def read_data(filename : str) -> List[int]:
 def count_increase(data : List[int]) -> int:
     # Count how many times the data increases
     
-    cnt, prev = 0, data[0]
-    
-    for idx, ele in enumerate(data):
-        cnt = cnt + 1 if ele > prev else cnt
-        prev = ele
+    cnt = 0
+    for idx in range(1, len(data)):
+        cnt += int(data[idx]> data[idx-1])
     
     return cnt
 
@@ -27,7 +25,7 @@ def count_increase_triples(data : List[int]) -> int:
     
     for idx, ele in enumerate(data):
         windowSum = sum(data[idx: idx+3])
-        cnt = cnt + 1 if windowSum > prevSum else cnt
+        cnt += int(windowSum > prevSum)
         prevSum = windowSum
         
     return cnt
