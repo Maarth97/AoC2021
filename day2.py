@@ -18,7 +18,7 @@ def f1(data : List[str]) -> int:
         
     return hor*depth
 # Puzzle 2
-def f2(data : List[int]) -> int:
+def f2(data : List[str]) -> int:
     hor, depth, aim = 0,0,0
     
     for idx, ele in enumerate(data):
