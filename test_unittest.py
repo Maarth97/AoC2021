@@ -1,7 +1,8 @@
 import day1
+import day2
 import unittest
 
-# Day1
+# Day1 =====================================================================
 class Day1(unittest.TestCase):
     def test_count_increase(self):
         self.assertEqual(day1.count_increase([0,1,2,3]), 3)
@@ -17,4 +18,22 @@ class Day1(unittest.TestCase):
         inp = [199,200,208,210,200,207,240,269,260,263]
         self.assertEqual(day1.count_increase_triples(inp), 5)
         
-
+# Day2 =====================================================================
+class Day2(unittest.TestCase):
+    def test_f1(self):
+        inp = ["forward 5",
+                "down 5",
+                "forward 8",
+                "up 3",
+                "down 8",
+                "forward 2"]
+        self.assertEqual(day2.f1(inp), 150)
+        
+    def test_f2(self):
+        inp = ["forward 5",
+                "down 5",
+                "forward 8",
+                "up 3",
+                "down 8",
+                "forward 2"]
+        self.assertEqual(day2.f2(inp), 900)
