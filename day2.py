@@ -1,7 +1,7 @@
 from typing import List
 
 # Get Data Input
-def read_data(filename : str) -> List[int]:
+def read_data(filename : str) -> List[str]:
     with open(filename) as f:
         return [x for x in f]
 
