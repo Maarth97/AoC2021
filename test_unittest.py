@@ -1,5 +1,6 @@
 import day1
 import day2
+import day3
 import unittest
 
 # Day1 =====================================================================
@@ -37,3 +38,35 @@ class Day2(unittest.TestCase):
                 "down 8",
                 "forward 2"]
         self.assertEqual(day2.f2(inp), 900)
+        
+# Day3 =====================================================================
+class Day3(unittest.TestCase):
+    def test_f1(self):
+        inp = ["00100",
+                "11110",
+                "10110",
+                "10111",
+                "10101",
+                "01111",
+                "00111",
+                "11100",
+                "10000",
+                "11001",
+                "00010",
+                "01010"]
+        self.assertEqual(day3.f1(inp), 198)
+        
+    def test_f2(self):
+        inp = ["00100",
+                "11110",
+                "10110",
+                "10111",
+                "10101",
+                "01111",
+                "00111",
+                "11100",
+                "10000",
+                "11001",
+                "00010",
+                "01010"]
+        self.assertEqual(day3.f2(inp), 230)
