@@ -4,7 +4,7 @@ from typing import List, Tuple
 def read_data(filename : str) -> Tuple[List[int], List[int]]:
     with open(filename) as f:
         data = [x.replace("\n", "") for x in f]
-        
+
         nums = [int(x) for x in data[0].split(",")]
         fields = []
         field = []
@@ -23,17 +23,10 @@ def read_data(filename : str) -> Tuple[List[int], List[int]]:
 def check_field(field : List[int] , nums : List[int])->bool:
 
     for idx in range(5):
-        # Check Row with idx
-        res = []
-        for elem in [ele for ele in field[5*idx : 5*idx+5]]:
-            res.append(True if elem in nums else False)
-        if all(res): return True
-        
-        # Check Cols with idx
-        res = []
-        for elem in [ele for idx2, ele in enumerate(field) if idx2 % 5 == idx ]:
-            res.append(True if elem in nums else False)
-        if all(res): return True
+        # Check Row with idx: 5*idx : 5*idx + 5 --> All Elements for Row idx
+        if all([True if elem in nums else False for elem in [ele for ele in field[5*idx : 5*idx+5]]]): return True
+        # Check Cols with idx: idx2 % 5 == idx --> All Elements for Col idx
+        if all([True if elem in nums else False for elem in [ele for idx2, ele in enumerate(field) if idx2 % 5 == idx ]]): return True
             
     return False
     
@@ -43,10 +36,11 @@ def f1(data : List[List[int]]) -> int:
     nums, fields = data[0], data[1]
     
     for idx, lotto in enumerate(nums):
-        if idx < 4: continue
+        if idx < 4: continue    # Performance
         
         for field in fields:
             if check_field(field, nums[:idx+1]):
+                # Sum of unmarked elements in First Bingo * Last Element to Win the Bingo
                 return sum([ele for ele in field if ele not in nums[:idx+1]]) * lotto
         
     
@@ -57,7 +51,7 @@ def f2(data : List[List[int]]) -> int:
     nums, fields = data[0], data[1]
     
     for idx, lotto in enumerate(nums):
-        if idx < 4: continue
+        if idx < 4: continue    # Performance
         
         for field in fields:
             if check_field(field, nums[:idx+1]):
@@ -65,6 +59,7 @@ def f2(data : List[List[int]]) -> int:
                 lastNums = nums[:idx+1]
                 fields.remove(field)
                 
+    # Sum of unmarked elements in Last Bingo * Last Element to Win the Bingo
     return sum([ele for ele in last_field if ele not in lastNums]) * lastNums[-1]
         
         
