@@ -40,10 +40,10 @@ def f2(data : List[str]) -> int:
         if len(data_co2) > 1:
             data_co2 = [ele for ele in data_co2 if int(ele[pos]) == LCB]
         
-    ox = sum([2**(N - idx) for idx, ele in enumerate(data_ox[0], start = 1) if ele == "1"])
-    co2 = sum([2**(N - idx) for idx, ele in enumerate(data_co2[0], start = 1)if ele == "1"])
+    #ox = sum([2**(N - idx) for idx, ele in enumerate(data_ox[0], start = 1) if ele == "1"])
+    #co2 = sum([2**(N - idx) for idx, ele in enumerate(data_co2[0], start = 1)if ele == "1"])
     
-    return ox * co2
+    return int(data_ox[0],2) * int(data_co2[0],2)   # ox * co2
         
         
  # MAIN       
