@@ -1,9 +1,11 @@
-import day1
-import day2
-import day3
-import day4
-import day5
 import unittest
+
+import Puzzles.day1 as day1
+import Puzzles.day2 as day2
+import Puzzles.day3 as day3
+import Puzzles.day4 as day4
+import Puzzles.day5 as day5
+import Puzzles.day6 as day6
 
 # Day1 =====================================================================
 class Day1(unittest.TestCase):
@@ -148,3 +150,13 @@ class Day5(unittest.TestCase):
                 0,0 -> 8,8
                 5,5 -> 8,2""".splitlines()
         self.assertEqual(day5.f2(inp), 12)
+        
+# Day6 =====================================================================
+class Day5(unittest.TestCase):
+    def test_f1(self):
+        inp = []
+        self.assertEqual(day6.f1(inp), None)
+        
+    def test_f2(self):
+        inp = []
+        self.assertEqual(day6.f2(inp), None)
