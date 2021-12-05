@@ -124,9 +124,27 @@ class Day4(unittest.TestCase):
 # Day5 =====================================================================
 class Day5(unittest.TestCase):
     def test_f1(self):
-        inp = []
-        self.assertEqual(day5.f1(inp), 198)
+        inp = """0,9 -> 5,9
+                8,0 -> 0,8
+                9,4 -> 3,4
+                2,2 -> 2,1
+                7,0 -> 7,4
+                6,4 -> 2,0
+                0,9 -> 2,9
+                3,4 -> 1,4
+                0,0 -> 8,8
+                5,5 -> 8,2""".splitlines()
+        self.assertEqual(day5.f1(inp), 5)
         
     def test_f2(self):
-        inp = []
-        self.assertEqual(day5.f2(inp), 230)
+        inp = """0,9 -> 5,9
+                8,0 -> 0,8
+                9,4 -> 3,4
+                2,2 -> 2,1
+                7,0 -> 7,4
+                6,4 -> 2,0
+                0,9 -> 2,9
+                3,4 -> 1,4
+                0,0 -> 8,8
+                5,5 -> 8,2""".splitlines()
+        self.assertEqual(day5.f2(inp), 12)
