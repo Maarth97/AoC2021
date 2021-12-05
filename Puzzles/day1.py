@@ -1,6 +1,8 @@
 from typing import List
 import os
 
+# Random Comment here
+
 # Get Data Input
 def read_data(filename : str) -> List[int]:
     with open(filename) as f:
