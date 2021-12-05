@@ -8,6 +8,17 @@ def read_data(filename : str) -> List[int]:
 
 
 def get_sequence(x1:int,y1:int,x2:int,y2:int, diag:bool=False)->Tuple[int,int]:
+    """
+    Args:
+        x1 (int): x-Position von Punkt 1
+        y1 (int): y-Position von Punkt 1
+        x2 (int): x-Position von Punkt 2
+        y2 (int): y-Position von Punkt 2
+        diag (bool, optional): True: Berücksichtigt auch Diagonale im +/-45° Winkel. Defaults to False.
+
+    Yields:
+        Iterator[Tuple[int,int]]: Iteriert über alle Punkte zwischen [x1,y1] und [x2,y2]
+    """
     
     # Waagerecht  
     if x1==x2:
