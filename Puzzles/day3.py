@@ -1,5 +1,6 @@
 from typing import List
 import numpy as np
+import os
 
 # Get Data Input
 def read_data(filename : str) -> List[int]:
@@ -48,6 +49,8 @@ def f2(data : List[str]) -> int:
         
  # MAIN       
 def main():
+    cwd = os.getcwd()
+    os.chdir(cwd.replace("Puzzles",""))
         
     data = read_data("Data\\data3.txt")
     print(f"Puzzle 1: {f1(data)}")

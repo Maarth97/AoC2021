@@ -1,4 +1,5 @@
 from typing import List, Tuple
+import os
 
 # Get Data Input
 def read_data(filename : str) -> Tuple[List[int], List[int]]:
@@ -66,6 +67,9 @@ def f2(data : List[List[int]]) -> int:
         
  # MAIN       
 def main(): 
+    cwd = os.getcwd()
+    os.chdir(cwd.replace("Puzzles",""))
+    
     data = read_data("Data\\data4.txt")
     print(f"Puzzle 1: {f1(data)}")
     print(f"Puzzle 2: {f2(data)}")
