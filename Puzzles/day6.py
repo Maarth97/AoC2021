@@ -15,12 +15,9 @@ def f1(data : List[int], NUM_DAYS = 80) -> int:
     population = data
     
     for day in range(1, NUM_DAYS+1):
-        population = [fish - 1  for fish in population]
-        population = population + [8 for _ , fish in enumerate(filter(lambda x: x < 0, population))]
+        population = [fish - 1  for fish in population] + [8 for _ , fish in enumerate(filter(lambda x: x <= 0, population))]
         population = [fish if fish >= 0 else 6 for fish in population]
-        
-        
-        
+           
     return len(population)
     
 # Puzzle 2 - Speicheroptimierte Version mit Hashtable
