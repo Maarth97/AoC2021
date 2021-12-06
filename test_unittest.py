@@ -6,6 +6,7 @@ import Puzzles.day3 as day3
 import Puzzles.day4 as day4
 import Puzzles.day5 as day5
 import Puzzles.day6 as day6
+import Puzzles.day7 as day7
 
 # Day1 =====================================================================
 class Day1(unittest.TestCase):
@@ -152,11 +153,25 @@ class Day5(unittest.TestCase):
         self.assertEqual(day5.f2(inp), 12)
         
 # Day6 =====================================================================
-class Day5(unittest.TestCase):
+class Day6(unittest.TestCase):
+    def test_f1(self):
+        inp = [3,4,3,1,2]
+        self.assertEqual(day6.f1(inp, NUM_DAYS = 18), 26)
+        self.assertEqual(day6.f1(inp, NUM_DAYS = 80), 5934)
+        
+    def test_f2(self):
+        inp = [3,4,3,1,2]
+        self.assertEqual(day6.f2(inp, NUM_DAYS = 18), 26)
+        self.assertEqual(day6.f2(inp, NUM_DAYS = 80), 5934)
+        self.assertEqual(day6.f2(inp, NUM_DAYS = 256), 26984457539)
+        
+# Day7 =====================================================================
+class Day7(unittest.TestCase):
     def test_f1(self):
         inp = []
-        self.assertEqual(day6.f1(inp), None)
+        self.assertEqual(day7.f1(inp), None)
+
         
     def test_f2(self):
         inp = []
-        self.assertEqual(day6.f2(inp), None)
+        self.assertEqual(day7.f2(inp), None)
