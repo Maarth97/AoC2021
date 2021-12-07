@@ -168,10 +168,10 @@ class Day6(unittest.TestCase):
 # Day7 =====================================================================
 class Day7(unittest.TestCase):
     def test_f1(self):
-        inp = []
-        self.assertEqual(day7.f1(inp), None)
+        inp = [16,1,2,0,4,2,7,1,2,14]
+        self.assertEqual(day7.f1(inp),37)
 
         
     def test_f2(self):
-        inp = []
-        self.assertEqual(day7.f2(inp), None)
+        inp = [16,1,2,0,4,2,7,1,2,14]
+        self.assertEqual(day7.f2(inp), 168)
