@@ -10,13 +10,13 @@ def read_data(filename : str) -> List[int]:
    
 # Puzzle 1
 def f1(data : List[List[int]]) -> int:
-    pass
+    return None
     
     
     
 # Puzzle 2
 def f2(data : List[List[int]]) -> int:
-    pass
+    return None
         
         
  # MAIN       
