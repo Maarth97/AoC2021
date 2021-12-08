@@ -16,8 +16,8 @@ def f1(data : List[int]) -> int:
     data = np.array(data)
     min_fuel, best_pos = np.inf, 0
     
-    return min([ sum(abs(data - pos)) for pos in range(data.max())])
-            
+    #return min([ sum(abs(data - pos)) for pos in range(data.max())])
+    return min(map( lambda x: sum(abs(data-x)), range(data.max())  ))
     
 
 def f2(data : List[int]) -> int:
