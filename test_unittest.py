@@ -1,5 +1,5 @@
 import unittest
-##
+
 import Puzzles.day1 as day1
 import Puzzles.day2 as day2
 import Puzzles.day3 as day3
@@ -213,10 +213,18 @@ gcafb gcf dcaebfg ecagb gf abcdeg gaef cafbge fdbac fegbdc |fgae cfgab fg bagce"
 # Day9 =====================================================================
 class Day9(unittest.TestCase):
     def test_f1(self):
-        inp = []
-        self.assertEqual(day9.f1(inp),None)
+        inp = [[int(y) for y in x.replace("\n","")] for x  in """2199943210
+3987894921
+9856789892
+8767896789
+9899965678""".splitlines()]
+        self.assertEqual(day9.f1(inp),15)
 
         
     def test_f2(self):
-        inp = []
-        self.assertEqual(day9.f2(inp), None)
+        inp = [[int(y) for y in x.replace("\n","")] for x  in """2199943210
+3987894921
+9856789892
+8767896789
+9899965678""".splitlines()]
+        self.assertEqual(day9.f2(inp), 1134)
