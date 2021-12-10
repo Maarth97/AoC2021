@@ -9,6 +9,7 @@ import Puzzles.day6 as day6
 import Puzzles.day7 as day7
 import Puzzles.day8 as day8
 import Puzzles.day9 as day9
+import Puzzles.day10 as day10
 
 # Day1 =====================================================================
 class Day1(unittest.TestCase):
@@ -228,3 +229,25 @@ class Day9(unittest.TestCase):
 8767896789
 9899965678""".splitlines()]
         self.assertEqual(day9.f2(inp), 1134)
+        
+# Day10 =====================================================================
+class Day10(unittest.TestCase):
+    inp = """[({(<(())[]>[[{[]{<()<>>
+[(()[<>])]({[<{<<[]>>(
+{([(<{}[<>[]}>{[]{[(<()>
+(((({<>}<{<{<>}{[]{[]{}
+[[<[([]))<([[{}[[()]]]
+[{[{({}]{}}([{[{{{}}([]
+{<[[]]>}<{[{[{[]{()[[[]
+[<(<(<(<{}))><([]([]()
+<{([([[(<>()){}]>(<<{{
+<{([{{}}[<[[[<>{}]]]>[]]""".splitlines()
+
+    def test_f1(self):
+        self.assertEqual(day10.f1(self.inp), 26397)
+
+
+        
+    def test_f2(self):
+
+        self.assertEqual(day10.f2(self.inp), 288957)

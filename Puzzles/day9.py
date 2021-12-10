@@ -37,14 +37,12 @@ def append_to_basin(MAP, row, col, basinList = None):
 # Puzzle 2
 def f2(data : List[List[int]]) -> int:
     M,N = len(data)+2, len(data[0])+2
-    HT = dict()
     MAP = np.pad(np.array(data),1, constant_values=10)     # Pad Data with 10 at the border
+    
     lowest = find_lowest(MAP, M,N)
-
-    for ele in lowest:
-        HT[ele] = append_to_basin(MAP, ele[0], ele[1])
-
+    HT = {ele : append_to_basin(MAP, ele[0], ele[1]) for ele in lowest}
     res = sorted([len([MAP[x,y] for x,y in HT[key]]) for key in HT],reverse=True)   
+    
     return res[0] * res[1] * res[2]
 
  # MAIN       
