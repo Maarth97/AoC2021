@@ -50,7 +50,7 @@ def f1(data : List[List[int]], TIME = 100) -> int:
 # Puzzle 2
 def f2(data : List[List[int]], MAX_TIME = 100000) -> int:
     M,N = len(data), len(data[0])
-    MAP = np.pad(np.array(data),1, constant_values=-np.inf)
+    MAP = np.pad(np.array(data),1, constant_values=-100000) # - np.inf
     cnt = 0
     
     
