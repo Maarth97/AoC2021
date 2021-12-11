@@ -10,6 +10,7 @@ import Puzzles.day7 as day7
 import Puzzles.day8 as day8
 import Puzzles.day9 as day9
 import Puzzles.day10 as day10
+import Puzzles.day11 as day11
 
 # Day1 =====================================================================
 class Day1(unittest.TestCase):
@@ -251,3 +252,24 @@ class Day10(unittest.TestCase):
     def test_f2(self):
 
         self.assertEqual(day10.f2(self.inp), 288957)
+        
+# Day11 =====================================================================
+class Day11(unittest.TestCase):
+    inp = [[int(y) for y in x.replace("\n","")] for x  in """5483143223
+2745854711
+5264556173
+6141336146
+6357385478
+4167524645
+2176841721
+6882881134
+4846848554
+5283751526""".splitlines()]
+
+    def test_f1(self):
+        self.assertEqual(day11.f1(self.inp), 1656)
+
+
+        
+    def test_f2(self):
+        self.assertEqual(day11.f2(self.inp), 195)

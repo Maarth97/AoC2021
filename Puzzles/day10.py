@@ -16,8 +16,8 @@ def corrupted(line)->str:
         elif Stack[-1]  + char in ["<>","()","[]","{}"]:
             Stack.pop()
         else:
-            return char
-    return Stack
+            return False, char
+    return True, Stack
             
             
     
@@ -28,10 +28,9 @@ def f1(data : List[List[int]]) -> int:
     failure = 0
     
     for line in data:
-        char = corrupted(line)
-        if isinstance(char, str):
-            failure += Awards[char]
-                
+        succ, char = corrupted(line)
+        failure = failure + Awards[char] if not succ else failure
+        
     return failure
 
 
@@ -41,8 +40,8 @@ def f2(data : List[List[int]]) -> int:
     score = []
     
     for idx, line in enumerate(data):
-        char = corrupted(line)
-        if not isinstance(char, str):
+        succ, char = corrupted(line)
+        if succ:
             score.append(0)
             for ele in reversed("".join(char)):
                 score[-1] = score[-1] * 5 + Awards[ele]
