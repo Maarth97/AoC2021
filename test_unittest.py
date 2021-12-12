@@ -11,6 +11,8 @@ import Puzzles.day8 as day8
 import Puzzles.day9 as day9
 import Puzzles.day10 as day10
 import Puzzles.day11 as day11
+import Puzzles.day12 as day12
+import Puzzles.day13 as day13
 
 # Day1 =====================================================================
 class Day1(unittest.TestCase):
@@ -273,3 +275,52 @@ class Day11(unittest.TestCase):
         
     def test_f2(self):
         self.assertEqual(day11.f2(self.inp), 195)
+        
+# Day12 =====================================================================
+class Day12(unittest.TestCase):
+    
+    convert = lambda data: [x.replace("\n","").strip().split("-") for x in data]
+    
+    inp = convert("""start-A
+    start-b
+    A-c
+    A-b
+    b-d
+    A-end
+    b-end""".splitlines())
+    
+    inp2 = convert("""dc-end
+    HN-start
+    start-kj
+    dc-start
+    dc-HN
+    LN-dc
+    HN-end
+    kj-sa
+    kj-HN
+    kj-dc""".splitlines())
+    
+
+    def test_f1(self):
+        self.assertEqual(day12.f1(self.inp), 10)
+        self.assertEqual(day12.f1(self.inp2), 19)
+
+        
+    def test_f2(self):
+        self.assertEqual(day12.f2(self.inp), 36)
+        self.assertEqual(day12.f2(self.inp2), 103)
+        
+        
+        
+# Day13 =====================================================================
+class Day13(unittest.TestCase):
+    
+    convert = lambda data: [x.replace("\n","").strip().split("-") for x in data]
+    
+    inp = []
+
+    def test_f1(self):
+        self.assertEqual(day13.f1(self.inp), None)
+        
+    def test_f2(self):
+        self.assertEqual(day13.f2(self.inp), None)
