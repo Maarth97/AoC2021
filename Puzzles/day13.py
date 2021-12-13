@@ -1,7 +1,7 @@
 from typing import List
 import os
-import copy
 import numpy as np
+
 
 # Get Data Input
 def read_data(filename : str) -> List[int]:
@@ -29,12 +29,18 @@ def fold(data, dir, num):
 
     return folded_data
 
+def print_map(MAP):
+    M,N = MAP.shape
+    for i in range(M):
+        for j in range(N):
+            print(f"{'###' if MAP[i,j] == 1 else '   '}", end="")
+        print("\n", end="")
+                  
+
 
 # Puzzle 1
 def f1(data : List[List[int]]) -> int:
-    data, folds = data
-    data = copy.deepcopy(data)
- 
+    data, folds = data 
     data = fold(data, folds[0][0], folds[0][1])
     
     return len(data)
@@ -42,8 +48,6 @@ def f1(data : List[List[int]]) -> int:
 # Puzzle 2
 def f2(data : List[List[int]]) -> int:
     data, folds = data
-    data = copy.deepcopy(data)
-   
     
     for dir, num in folds:
         data = fold(data, dir, num)
@@ -56,7 +60,7 @@ def f2(data : List[List[int]]) -> int:
     for ele in data:
         MAP[ele[1],ele[0]] = 1
         
-    print(MAP)
+    print_map(MAP)
     
     return len(data)
         

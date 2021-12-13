@@ -1,6 +1,7 @@
 from typing import List
 import os
 import copy
+from collections import defaultdict
 
 # Get Data Input
 def read_data(filename : str) -> List[int]:
@@ -38,11 +39,9 @@ def find_moves(node, MAP, visitedList = None, visitTwice = False , once=False):
     return cnt
    
 def create_map(data):
-    MAP = dict()
+    MAP = defaultdict(list)
     
     for node1,node2 in data:
-        if node1 not in MAP: MAP[node1] = []
-        if node2 not in MAP: MAP[node2] = []
         MAP[node1].append(node2)
         MAP[node2].append(node1)
         
