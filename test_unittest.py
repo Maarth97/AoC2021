@@ -13,6 +13,21 @@ import Puzzles.day10 as day10
 import Puzzles.day11 as day11
 import Puzzles.day12 as day12
 import Puzzles.day13 as day13
+#import Puzzles.day14 as day14
+#import Puzzles.day15 as day15
+#import Puzzles.day16 as day16
+#import Puzzles.day17 as day17
+#import Puzzles.day18 as day18
+#import Puzzles.day19 as day19
+#import Puzzles.day20 as day20
+#import Puzzles.day21 as day21
+#import Puzzles.day22 as day22
+#import Puzzles.day23 as day23
+#import Puzzles.day24 as day24
+#import Puzzles.day25 as day25
+
+
+
 
 # Day1 =====================================================================
 class Day1(unittest.TestCase):
@@ -29,7 +44,8 @@ class Day1(unittest.TestCase):
         
         inp = [199,200,208,210,200,207,240,269,260,263]
         self.assertEqual(day1.count_increase_triples(inp), 5)
-        
+   
+     
 # Day2 =====================================================================
 class Day2(unittest.TestCase):
     def test_f1(self):
@@ -317,10 +333,32 @@ class Day13(unittest.TestCase):
     
     convert = lambda data: [x.replace("\n","").strip().split("-") for x in data]
     
-    inp = []
+    inp = ([[6,10],
+[0,14],
+[9,10],
+[0,3],
+[10,4],
+[4,11],
+[6,0],
+[6,12],
+[4,1],
+[0,13],
+[10,12],
+[3,4],
+[3,0],
+[8,4],
+[1,10],
+[2,14],
+[8,10],
+[9,0]],
+
+[["y",7],
+["x",5]])
 
     def test_f1(self):
-        self.assertEqual(day13.f1(self.inp), None)
+        self.assertEqual(day13.f1(self.inp), 17)
         
     def test_f2(self):
-        self.assertEqual(day13.f2(self.inp), None)
+        self.assertEqual(day13.f2(self.inp), 16)
+
+
