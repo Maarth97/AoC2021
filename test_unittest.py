@@ -13,8 +13,8 @@ import Puzzles.day10 as day10
 import Puzzles.day11 as day11
 import Puzzles.day12 as day12
 import Puzzles.day13 as day13
-#import Puzzles.day14 as day14
-#import Puzzles.day15 as day15
+import Puzzles.day14 as day14
+import Puzzles.day15 as day15
 #import Puzzles.day16 as day16
 #import Puzzles.day17 as day17
 #import Puzzles.day18 as day18
@@ -362,3 +362,43 @@ class Day13(unittest.TestCase):
         self.assertEqual(day13.f2(self.inp), 16)
 
 
+# Day14 =====================================================================
+class Day14(unittest.TestCase):
+    
+    RAW = "NNCB","""CH -> B
+    HH -> N
+    CB -> H
+    NH -> C
+    HB -> C
+    HC -> B
+    HN -> C
+    NN -> C
+    BH -> H
+    NC -> B
+    NB -> B
+    BN -> B
+    BB -> N
+    BC -> B
+    CC -> N
+    CN -> C""".splitlines()
+
+    convert = lambda x: [[a for a in ele.strip().split(" -> ")] for ele in x]       
+    inp = RAW[0], convert(RAW[1])  
+
+    def test_f1(self):
+        self.assertEqual(day14.f1(self.inp), 1588)
+        
+    def test_f2(self):
+        self.assertEqual(day14.f2(self.inp), 2188189693529)
+
+
+# Day15 =====================================================================
+class Day15(unittest.TestCase):
+    
+    inp = []
+
+    def test_f1(self):
+        self.assertEqual(day15.f1(self.inp), None)
+        
+    def test_f2(self):
+        self.assertEqual(day15.f2(self.inp), None)
